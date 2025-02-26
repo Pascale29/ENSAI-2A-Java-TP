@@ -41,14 +41,13 @@ public class Password {
     public static String bruteForce6Digit(String targetHash) {
 
         for (int i = 0; i < 1000000; i++) {
-            String value = String.format("%06d", i) ;
-            String valueHash = hashPassword(value) ;
-            if valueHash.equals(targetHash)) {
-                return value ;
+            String value = String.format("%06d", i);
+            String valueHash = hashPassword(value);
+            if (valueHash.equals(targetHash)) {
+                return value;
             }
         }
         return null;
-    }
 
     /**
      * Checks if the given password is strong according to the following criteria:
