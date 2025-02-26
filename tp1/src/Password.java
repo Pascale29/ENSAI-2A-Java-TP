@@ -48,6 +48,7 @@ public class Password {
             }
         }
         return null;
+    }
 
     /**
      * Checks if the given password is strong according to the following criteria:
@@ -64,9 +65,31 @@ public class Password {
      * @return true if the password is strong, false otherwise
      */
     public static boolean isStrongPassword(String password) {
+        if (password == null || password.length() < 12) {
+            return false;
+        }
 
-        // Code here
+        if (password.contains(" ")) {
+            return false;
+        }
 
+        boolean hasUpper = false;
+        boolean hasLower = false;
+        boolean hasDigit = false;
+
+        for (char c : password.toCharArray()) {
+            if (Character.isUpperCase(c)) {
+                hasUpper = true;
+            } else if (Character.isLowerCase(c)) {
+                hasLower = true;
+            } else if (Character.isDigit(c)) {
+                hasDigit = true;
+            }
+
+            if (hasUpper && hasLower && hasDigit) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -80,9 +103,12 @@ public class Password {
      */
     public static HashMap<String, Boolean> checkPasswordsList(ArrayList<String> passwords) {
 
-        // Code here
+        for (String password : passwords) {
+            // Vérifie la robustesse du mot de passe et stocke le résultat dans la HashMap
+            result.put(password, isStrongPassword(password));
+        }
 
-        return null;
+        return result;
     }
 
     /**
