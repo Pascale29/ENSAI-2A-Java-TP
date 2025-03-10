@@ -17,7 +17,7 @@ public class Library {
 
     // Attributes
     private String name;
-    private List<Book> books;
+    private List<Item> items;
 
 
     /**
@@ -25,27 +25,27 @@ public class Library {
      */
     public Library(String name) {
         this.name = name;
-        this.books = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
     
     // Method
     /**
-     * Add a new book to the library.
+     * Add a new item to the library.
      */
-    public void addBook(Book book) {
-        books.add(book);
+    public void addItem(Item item) {
+        items.add(item);
     }
 
     // Method
     /**
-     * display the books of the library.
+     * display the items of the library.
      */
-    public void displayBooks() {
-        if (books.isEmpty()) {
+    public void displayItems() {
+        if (items.isEmpty()) {
             System.out.println("Aucun livre dans la bibliothèque.");
         } else {
-            for (Book book : books) {
-                System.out.println(book.toString());
+            for (Item item : items) {
+                System.out.println(item.toString());
             }
         }
     }

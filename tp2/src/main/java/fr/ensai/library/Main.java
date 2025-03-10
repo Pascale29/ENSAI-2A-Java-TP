@@ -14,5 +14,20 @@ public class Main {
             tolkien);
 
         System.out.println(fellowshipOfTheRing.toString());
+
+        Library ensai = new Library("ensai");  
+        //ensai.loadBooksFromCSV("books.csv");
+        //ensai.displayItems();
+
+        Magazine vogue = new Magazine("vogue", 2020, 22, null, null);
+        Magazine Vie = new Magazine("Vie", 2021, 220, null, null);
+
+        ensai.addItem(Vie);
+        ensai.addItem(vogue);
+
+        ensai.displayItems();
+
     }
+
+    
 }
