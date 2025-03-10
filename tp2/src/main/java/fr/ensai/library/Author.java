@@ -5,24 +5,27 @@ import java.util.Objects;
 /**
  * Represents an Author.
  */
-public class Author {
+public class Author extends Person {
 
     // Attributes
-    private String name;
-    private int age;
     private String nationality;
 
     /**
-     * Constructs a new Book object.
+     * Constructs a new Author object.
      */
     public Author(String name, int age, String nationality) {
-        this.name = name;
-        this.age = age;
+        super(name, age);
         this.nationality = nationality;
     }
 
-    public String getName() {
-        return this.name;
+    // Getter for nationality
+    public String getNationality() {
+        return nationality;
+    }
+
+    // Setter for nationality
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
     /**
@@ -44,5 +47,6 @@ public class Author {
     public String toString() {
         return "Author " + name;
     }
+
 
 }
